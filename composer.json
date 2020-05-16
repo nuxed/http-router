@@ -1,0 +1,44 @@
+{
+    "name": "nuxed/http-router",
+    "type": "library",
+    "description": "Nuxed Http Router",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "azjezz",
+            "email": "azjezz@protonmail.com"
+        },
+        {
+            "name": "Nuxed Community",
+            "homepage": "https://github.com/nuxed/http-router/graphs/contributors"
+        }
+    ],
+    "require": {
+        "hhvm": "^4.56",
+        "hhvm/hsl": "^4.40",
+        "nuxed/contract": "^1.0",
+        "facebook/hack-router": "^0.19.6",
+        "facebook/definition-finder": "^2.13",
+        "nuxed/filesystem": "^1.4",
+        "nuxed/environment": "^1.3"
+    },
+    "require-dev": {
+        "facebook/fbexpect": "^2.7",
+        "hhvm/hacktest": "^2.0",
+        "hhvm/hhast": "^4.25",
+        "nuxed/http-message": "^1."
+    },
+    "conflict": {
+        "hhvm/hsl-experimental": "<4.31.1"
+    },
+    "scripts": {
+        "check": [
+            "@type-check",
+            "@lint",
+            "@test"
+        ],
+        "lint": "hhast-lint -v src/",
+        "test": "hacktest tests/",
+        "type-check": "hh_client src/"
+    }
+}
